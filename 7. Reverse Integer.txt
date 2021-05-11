@@ -1,0 +1,10 @@
+class Solution(object):
+    def reverse(self, x):
+        s = str(abs(x))    
+        reverse = int(s[::-1])
+        if reverse > 2147483647:
+            return 0
+        return reverse if x > 0 else (reverse * -1)
+    
+
+        
