@@ -1,0 +1,20 @@
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        
+        arr = []
+        temp = head
+        while temp:
+            arr.append(temp.val)
+            temp = temp.next
+            
+        arr = arr[::-1]
+        
+        temp = head
+        i=0
+        while temp:
+            if temp.val != arr[i]:
+                return False
+            temp = temp.next
+            i+=1
+            
+        return True
