@@ -1,0 +1,29 @@
+class Solution:
+    def minOperations(self, s: str) -> int:
+        
+        #0110101 - 1010101 - 0101010
+        
+        temp = "1"
+        temp1 = "0"
+        count = 0
+        count1 = 0
+        
+        for i in range(len(s)-1):
+            if temp[-1] == "1":
+                temp+="0"
+            else:
+                temp+="1"
+                
+            if temp1[-1] == "0":
+                temp1+="1"
+            else:
+                temp1+="0"
+                
+        for j in range(len(s)):
+            if s[j] != temp[j]:
+                count+=1
+                
+            if s[j] != temp1[j]:
+                count1+=1
+                
+        return min(count,count1)
