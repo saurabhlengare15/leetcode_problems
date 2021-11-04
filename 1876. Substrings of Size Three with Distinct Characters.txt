@@ -1,0 +1,10 @@
+class Solution:
+    def countGoodSubstrings(self, s: str) -> int:
+        count=0
+        for i in range(len(s)):
+            sub_string = ''
+            for j in range(i,len(s)):
+                sub_string+=s[j]
+                if len(sub_string)==len(set(sub_string))==3:
+                    count+=1
+        return count
